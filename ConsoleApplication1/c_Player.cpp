@@ -30,3 +30,14 @@ void c_Player::takeDamage(int damage, const char* enemy)
 		std::cout << "You die from hand " << enemy << "\n";
 	}
 }
+
+void c_Player::giveDamage(c_Enemy target)
+{
+	if (target.isAlive()){
+		std::cout << "You given damage to " << target.getName() << "\n";
+		target.takeDamage(damage);
+	}
+	else {
+		std::cout << target.getName() << " is dead\n";
+	}
+}

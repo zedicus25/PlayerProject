@@ -1,4 +1,5 @@
 #pragma once
+#include "c_Enemy.h"
 class c_Player
 {
 private:
@@ -21,6 +22,7 @@ public:
 	}
 
 	void takeDamage(int damage, const char* enemy);
+	void giveDamage(c_Enemy target);
 
 	inline bool isAlive() const{
 		return health > 0;
