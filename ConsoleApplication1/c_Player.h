@@ -22,7 +22,12 @@ public:
 	}
 
 	void takeDamage(int damage, const char* enemy);
-	void giveDamage(c_Enemy target);
+	void giveDamage(c_Enemy& target);
+
+	void heal();
+	void restoreArmor();
+
+	friend std::ostream& operator <<(std::ostream& out, c_Player pl);
 
 	inline bool isAlive() const{
 		return health > 0;

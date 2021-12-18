@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 class c_Enemy
 {
 private:
@@ -24,8 +25,10 @@ public:
 	void takeDamage(int damage);
 
 	inline bool isAlive() const {
-		return health > 0;
+		return this->health > 0;
 	}	
+
+	friend std::ostream& operator << (std::ostream& out, const c_Enemy en);
 
 	~c_Enemy()
 	{
